@@ -1,1 +1,26 @@
 <h3>Home</h3>
+<div class="text-center">
+  <br />
+    <%= simple_form_for @visitor do |f| %>
+      <%= f.error_notification %>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+              <%= f.input :favorite, :collection => Visitor::NAMES, label: false, as: :select, prompt: 'Select a favorite...' %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+              <%= f.input :comment, label: false, :placeholder => 'Add a comment...', :class => "col-md-12" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+              <%= f.submit "Choose!", :class => "btn btn-primary"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
